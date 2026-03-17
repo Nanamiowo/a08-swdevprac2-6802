@@ -1,13 +1,15 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import Link from "next/link"
 
 export default function Card({
   vid,
   name,
-  rating
-}:{vid:string,name:string,rating?:number}){
+  rating,
+  picture
+}:{vid:string,picture:string,name:string,rating?:number}){
 
   const [score,setScore] = useState(rating ?? 0)
 
@@ -17,7 +19,7 @@ export default function Card({
 
       <div className="bg-white shadow-lg rounded-lg p-4 w-[250px]">
 
-        <img src="/img/venue.jpg"/>
+        <Image src={picture} alt={name} width={100} height={100}/>
 
         <h2>{name}</h2>
 

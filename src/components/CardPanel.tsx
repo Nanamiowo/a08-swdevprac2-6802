@@ -15,6 +15,7 @@ export default async function CardPanel(){
             key={item.id}
             vid={item.id}
             name={item.name}
+            picture={item.picture}
           />
         ))
       }

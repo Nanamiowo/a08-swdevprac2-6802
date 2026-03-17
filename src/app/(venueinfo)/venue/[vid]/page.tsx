@@ -1,15 +1,17 @@
 import getVenue from "@/libs/getVenue"
+import Image from "next/image"
 
 export default async function Page({ params }: any){
 
-  const venueJson = await getVenue(params.vid)
+  const vid = await params.vid
+  const venueJson = await getVenue(vid)
   const venue = venueJson.data
 
   return(
 
     <main>
 
-      <img src={venue.picture} alt={venue.name}/>
+      <Image src={venue.picture} alt={venue.name} width={100} height={100}/>
 
       <h1>{venue.name}</h1>
 

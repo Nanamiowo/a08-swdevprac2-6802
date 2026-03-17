@@ -12,14 +12,16 @@ export default async function VenueCatalog({
     <div className="grid grid-cols-3 gap-8 mt-6 justify-items-center">
 
       {
-        venueJsonReady.data.slice(0,3).map((item)=>(
+        venueJsonReady.data.map((item)=>(
           <Card
             key={item.id}
             vid={item.id}
             name={item.name}
+            picture={item.picture}
           />
         ))
       }
+
 
     </div>
 
