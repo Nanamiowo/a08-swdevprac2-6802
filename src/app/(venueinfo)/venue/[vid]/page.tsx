@@ -1,8 +1,6 @@
 import getVenue from "@/libs/getVenue"
 
-export default async function Page({
-  params
-}:{params:{vid:string}}){
+export default async function Page({ params }: any){
 
   const venueJson = await getVenue(params.vid)
   const venue = venueJson.data
@@ -11,7 +9,7 @@ export default async function Page({
 
     <main>
 
-      <img src={`https://venue-api.vercel.app${venue.picture}`} alt={venue.name}/>
+      <img src={venue.picture} alt={venue.name}/>
 
       <h1>{venue.name}</h1>
 
